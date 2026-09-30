@@ -1,5 +1,10 @@
 # OpenCode × Crazyrouter 一键配置脚本
 
+<!-- crazyrouter-links -->
+> - 📖 **完整接入指南（手动配置、Base URL 规则、推荐模型、FAQ）**：https://crazyrouter.com/zh/integrations/opencode?utm_source=github&utm_medium=readme&utm_campaign=opencode
+> - 💰 **模型价格对比（官方 / Azure / Bedrock / Vertex / Crazyrouter，每日核对）**：https://crazyrouter.com/zh/pricing?utm_source=github&utm_medium=readme&utm_campaign=opencode
+> - 🗂 **按厂商浏览全部模型**：https://crazyrouter.com/zh/models?utm_source=github&utm_medium=readme&utm_campaign=opencode
+
 把 [OpenCode](https://opencode.ai) 配置为通过 [Crazyrouter](https://cn.crazyrouter.com?utm_source=github&utm_medium=tutorial&utm_campaign=opencode_crazyrouter) 使用 Claude、GPT、DeepSeek、Qwen 等模型。
 
 > 入口要求：用户面对的入口是 `https://cn.crazyrouter.com`；OpenCode 自定义 OpenAI-compatible provider 需要 `/v1`，所以脚本会自动写入 `https://cn.crazyrouter.com/v1` 到 `provider.options.baseURL`。
