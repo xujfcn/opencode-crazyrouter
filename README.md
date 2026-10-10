@@ -1,9 +1,9 @@
 # OpenCode × Crazyrouter 一键配置脚本
 
 <!-- crazyrouter-links -->
-> - 📖 **完整接入指南（手动配置、Base URL 规则、推荐模型、FAQ）**：https://crazyrouter.com/zh/integrations/opencode?utm_source=github&utm_medium=readme&utm_campaign=opencode
-> - 💰 **模型价格对比（官方 / Azure / Bedrock / Vertex / Crazyrouter，每日核对）**：https://crazyrouter.com/zh/pricing?utm_source=github&utm_medium=readme&utm_campaign=opencode
-> - 🗂 **按厂商浏览全部模型**：https://crazyrouter.com/zh/models?utm_source=github&utm_medium=readme&utm_campaign=opencode
+> - 📖 **完整接入指南（手动配置、Base URL 规则、推荐模型、FAQ）**：https://crazyrouter.com/zh/integrations/opencode?utm_source=github&utm_medium=github_readme&utm_campaign=opencode-crazyrouter&utm_content=readme_01__zh
+> - 💰 **模型价格对比（官方 / Azure / Bedrock / Vertex / Crazyrouter，每日核对）**：https://crazyrouter.com/zh/pricing?utm_source=github&utm_medium=github_readme&utm_campaign=opencode-crazyrouter&utm_content=readme_02__zh
+> - 🗂 **按厂商浏览全部模型**：https://crazyrouter.com/zh/models?utm_source=github&utm_medium=github_readme&utm_campaign=opencode-crazyrouter&utm_content=readme_03__zh
 
 把 [OpenCode](https://opencode.ai) 配置为通过 [Crazyrouter](https://cn.crazyrouter.com?utm_source=github&utm_medium=tutorial&utm_campaign=opencode_crazyrouter) 使用 Claude、GPT、DeepSeek、Qwen 等模型。
 
@@ -28,7 +28,7 @@ curl -fsSL https://raw.githubusercontent.com/xujfcn/opencode-crazyrouter/main/se
 ## 非交互使用
 
 ```bash
-CRAZYROUTER_API_KEY=sk-your-key \
+CRAZYROUTER_API_KEY=sk-YOUR_API_KEY \
   bash <(curl -fsSL https://raw.githubusercontent.com/xujfcn/opencode-crazyrouter/main/setup.sh) \
   --yes --model claude-sonnet-4.6
 ```
