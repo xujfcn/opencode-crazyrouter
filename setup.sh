@@ -5,7 +5,7 @@
 #   curl -fsSL https://raw.githubusercontent.com/xujfcn/opencode-crazyrouter/main/setup.sh | bash
 #
 # Non-interactive:
-#   CRAZYROUTER_API_KEY=sk-xxx bash setup.sh --yes --model claude-sonnet-4.6
+#   CRAZYROUTER_API_KEY=sk-xxx bash setup.sh --yes --model claude-sonnet-4-6
 
 set -euo pipefail
 
@@ -13,7 +13,7 @@ ROOT_URL="${CRAZYROUTER_ROOT_URL:-https://cn.crazyrouter.com}"
 BASE_URL="${CRAZYROUTER_BASE_URL:-${ROOT_URL%/}/v1}"
 CONFIG_FILE="${OPENCODE_CONFIG:-$HOME/.config/opencode/opencode.json}"
 PROVIDER_ID="${OPENCODE_CRAZYROUTER_PROVIDER_ID:-crazyrouter}"
-MODEL="${OPENCODE_CRAZYROUTER_MODEL:-claude-sonnet-4.6}"
+MODEL="${OPENCODE_CRAZYROUTER_MODEL:-claude-sonnet-4-6}"
 SMALL_MODEL="${OPENCODE_CRAZYROUTER_SMALL_MODEL:-deepseek-v4-flash}"
 API_KEY="${CRAZYROUTER_API_KEY:-}"
 YES=false
@@ -36,7 +36,7 @@ Usage:
 
 Options:
   --api-key KEY          Crazyrouter API key. Or set CRAZYROUTER_API_KEY.
-  --model MODEL          Main OpenCode model. Default: claude-sonnet-4.6
+  --model MODEL          Main OpenCode model. Default: claude-sonnet-4-6
   --small-model MODEL    Small model. Default: deepseek-v4-flash
   --root-url URL         Crazyrouter root URL. Default: https://cn.crazyrouter.com
   --base-url URL         OpenAI-compatible URL. Default: <root-url>/v1
@@ -52,7 +52,7 @@ Examples:
 
   CRAZYROUTER_API_KEY=sk-your-key \
     bash <(curl -fsSL https://raw.githubusercontent.com/xujfcn/opencode-crazyrouter/main/setup.sh) \
-    --yes --model claude-sonnet-4.6
+    --yes --model claude-sonnet-4-6
 
 Notes:
   OpenCode custom OpenAI-compatible providers need a /v1 baseURL.
@@ -115,23 +115,23 @@ choose_model() {
   fi
   echo ""
   echo "  Choose your default OpenCode model:"
-  echo -e "  ${GRAY}1) claude-sonnet-4.6    Balanced coding default${NC}"
+  echo -e "  ${GRAY}1) claude-sonnet-4-6    Balanced coding default${NC}"
   echo -e "  ${GRAY}2) claude-opus-4-8      Strongest reasoning${NC}"
   echo -e "  ${GRAY}3) gpt-5.5              OpenAI flagship${NC}"
   echo -e "  ${GRAY}4) deepseek-v4-flash    Fast and low-cost${NC}"
-  echo -e "  ${GRAY}5) qwen3-coder          Coding model${NC}"
+  echo -e "  ${GRAY}5) gpt-4o-mini          Coding model${NC}"
   echo -e "  ${GRAY}6) Custom${NC}"
   echo ""
   local choice=""
   read_prompt "  Choice [1]: " choice
   case "${choice:-1}" in
-    1) MODEL="claude-sonnet-4.6" ;;
+    1) MODEL="claude-sonnet-4-6" ;;
     2) MODEL="claude-opus-4-8" ;;
     3) MODEL="gpt-5.5" ;;
     4) MODEL="deepseek-v4-flash" ;;
-    5) MODEL="qwen3-coder" ;;
+    5) MODEL="gpt-4o-mini" ;;
     6) read_prompt "  Enter model id: " MODEL ;;
-    *) MODEL="claude-sonnet-4.6" ;;
+    *) MODEL="claude-sonnet-4-6" ;;
   esac
 }
 
@@ -212,12 +212,12 @@ providers[provider_id] = {
         'chunkTimeout': 30000
     },
     'models': {
-        'claude-sonnet-4.6': {'name': 'Claude Sonnet 4.6'},
+        'claude-sonnet-4-6': {'name': 'Claude Sonnet 4.6'},
         'claude-opus-4-8': {'name': 'Claude Opus 4.8'},
         'gpt-5.5': {'name': 'GPT-5.5'},
         'gpt-4o': {'name': 'GPT-4o'},
         'deepseek-v4-flash': {'name': 'DeepSeek V4 Flash'},
-        'qwen3-coder': {'name': 'Qwen3 Coder'},
+        'gpt-4o-mini': {'name': 'GPT-4o Mini'},
         model: {'name': model}
     }
 }

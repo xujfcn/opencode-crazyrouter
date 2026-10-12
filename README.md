@@ -21,7 +21,7 @@ curl -fsSL https://raw.githubusercontent.com/xujfcn/opencode-crazyrouter/main/se
 - 让你粘贴 Crazyrouter API Key；
 - 写入 `~/.config/opencode/opencode.json`；
 - 添加 `crazyrouter` 自定义 provider；
-- 设置默认模型，例如 `crazyrouter/claude-sonnet-4.6`；
+- 设置默认模型，例如 `crazyrouter/claude-sonnet-4-6`；
 - 调用 `https://cn.crazyrouter.com/v1/models` 验证 API Key 和 endpoint；
 - 覆盖旧配置前自动生成 `.bak.<timestamp>` 备份。
 
@@ -30,7 +30,7 @@ curl -fsSL https://raw.githubusercontent.com/xujfcn/opencode-crazyrouter/main/se
 ```bash
 CRAZYROUTER_API_KEY=sk-YOUR_API_KEY \
   bash <(curl -fsSL https://raw.githubusercontent.com/xujfcn/opencode-crazyrouter/main/setup.sh) \
-  --yes --model claude-sonnet-4.6
+  --yes --model claude-sonnet-4-6
 ```
 
 ## 配置结果
@@ -51,15 +51,15 @@ CRAZYROUTER_API_KEY=sk-YOUR_API_KEY \
         "chunkTimeout": 30000
       },
       "models": {
-        "claude-sonnet-4.6": { "name": "Claude Sonnet 4.6" },
+        "claude-sonnet-4-6": { "name": "Claude Sonnet 4.6" },
         "claude-opus-4-8": { "name": "Claude Opus 4.8" },
         "gpt-5.5": { "name": "GPT-5.5" },
         "deepseek-v4-flash": { "name": "DeepSeek V4 Flash" },
-        "qwen3-coder": { "name": "Qwen3 Coder" }
+        "gpt-4o-mini": { "name": "GPT-4o Mini" }
       }
     }
   },
-  "model": "crazyrouter/claude-sonnet-4.6",
+  "model": "crazyrouter/claude-sonnet-4-6",
   "small_model": "crazyrouter/deepseek-v4-flash"
 }
 ```
